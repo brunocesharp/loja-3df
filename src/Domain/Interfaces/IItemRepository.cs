@@ -4,9 +4,9 @@ namespace AssistenteDB.Domain.Interfaces;
 
 public interface IItemRepository
 {
-    Task<IEnumerable<Item>> GetAllAsync();
-    Task<Item?> GetByIdAsync(int id);
+    Task<IEnumerable<Item>> GetByVersaoIdAsync(long versaoId);
+    Task<Item?> GetByIdAsync(long id);
     Task<Item> CreateAsync(Item item);
-    Task<Item?> UpdateAsync(int id, Item item);
-    Task<bool> DeleteAsync(int id);
+    Task<Item?> UpdateAsync(long id, Item item);
+    Task<bool> DeleteAsync(long id);
 }
