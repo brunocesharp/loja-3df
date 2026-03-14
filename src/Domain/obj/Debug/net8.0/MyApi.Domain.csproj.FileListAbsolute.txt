@@ -1,0 +1,11 @@
+D:\repos\Plugins\SalvarDadosBancoPlugin\src\Domain\bin\Debug\net8.0\MyApi.Domain.deps.json
+D:\repos\Plugins\SalvarDadosBancoPlugin\src\Domain\bin\Debug\net8.0\MyApi.Domain.dll
+D:\repos\Plugins\SalvarDadosBancoPlugin\src\Domain\bin\Debug\net8.0\MyApi.Domain.pdb
+D:\repos\Plugins\SalvarDadosBancoPlugin\src\Domain\obj\Debug\net8.0\MyApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\repos\Plugins\SalvarDadosBancoPlugin\src\Domain\obj\Debug\net8.0\MyApi.Domain.AssemblyInfoInputs.cache
+D:\repos\Plugins\SalvarDadosBancoPlugin\src\Domain\obj\Debug\net8.0\MyApi.Domain.AssemblyInfo.cs
+D:\repos\Plugins\SalvarDadosBancoPlugin\src\Domain\obj\Debug\net8.0\MyApi.Domain.csproj.CoreCompileInputs.cache
+D:\repos\Plugins\SalvarDadosBancoPlugin\src\Domain\obj\Debug\net8.0\MyApi.Domain.dll
+D:\repos\Plugins\SalvarDadosBancoPlugin\src\Domain\obj\Debug\net8.0\refint\MyApi.Domain.dll
+D:\repos\Plugins\SalvarDadosBancoPlugin\src\Domain\obj\Debug\net8.0\MyApi.Domain.pdb
+D:\repos\Plugins\SalvarDadosBancoPlugin\src\Domain\obj\Debug\net8.0\ref\MyApi.Domain.dll
