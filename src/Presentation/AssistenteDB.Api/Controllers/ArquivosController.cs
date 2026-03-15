@@ -20,7 +20,6 @@ public class ArquivosController : ControllerBase
     }
 
     [HttpPost]
-    [Consumes("multipart/form-data")]
     public async Task<IActionResult> Upload([FromForm] long tipoArquivoId, IFormFile file)
     {
         if (file is null || file.Length == 0)

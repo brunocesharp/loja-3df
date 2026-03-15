@@ -4,7 +4,12 @@
       "Bash(dotnet new:*)",
       "Bash(dotnet sln:*)",
       "Bash(dotnet build:*)",
-      "Bash(taskkill /PID 29448 /F)"
+      "Bash(taskkill /PID 29448 /F)",
+      "Bash(find /d/repos/Plugins -type f ! -path */bin/* ! -path */obj/* ! -path */.git/*)",
+      "Bash(dotnet --version)",
+      "Bash(dotnet --list-sdks)",
+      "Bash(dotnet restore:*)",
+      "Bash(dotnet package:*)"
     ]
   }
 }

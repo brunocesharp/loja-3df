@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using AssistenteDB.Data.Context;
 using AssistenteDB.Data.Repositories;
 using AssistenteDB.Domain.Interfaces;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,8 +16,7 @@ builder.WebHost.ConfigureKestrel(options =>
 });
 
 builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddOpenApi();
 
 // Limite de upload: 10 MB
 builder.Services.Configure<FormOptions>(o => o.MultipartBodyLengthLimit = 10_485_760);
@@ -40,8 +40,8 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.MapOpenApi();             // /openapi/v1.json
+    app.MapScalarApiReference();  // /scalar/v1
 }
 
 app.UseHttpsRedirection();
