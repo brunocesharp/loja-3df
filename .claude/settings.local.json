@@ -57,7 +57,9 @@
       "Bash(gh issue:*)",
       "Bash(where gh:*)",
       "Bash(winget list:*)",
-      "Bash(cmd /c \"gh --version\")"
+      "Bash(cmd /c \"gh --version\")",
+      "Bash(powershell -Command \"gh --version\")",
+      "Bash(powershell -Command \"Get-Command gh -ErrorAction SilentlyContinue; Get-ChildItem ''C:\\\\Program Files'' -Filter ''gh*'' -Recurse -ErrorAction SilentlyContinue | Select-Object -First 5 FullName\")"
     ]
   }
 }
