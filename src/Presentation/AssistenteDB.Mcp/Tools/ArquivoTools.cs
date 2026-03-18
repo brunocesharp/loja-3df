@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.Text.Json;
+using AssistenteDB.Domain.Entities;
 using AssistenteDB.Domain.Interfaces;
 using ModelContextProtocol.Server;
 
@@ -8,6 +9,38 @@ namespace AssistenteDB.Mcp.Tools;
 [McpServerToolType]
 public class ArquivoTools(IArquivoRepository repo)
 {
+    [McpServerTool(Name = "upload_arquivo"), Description("Faz upload de um arquivo em base64, criando o registro e retornando o id gerado.")]
+    public async Task<string> UploadArquivo(
+        [Description("Id do tipo do arquivo")] long tipoArquivoId,
+        [Description("Conteúdo do arquivo codificado em base64")] string base64)
+    {
+        byte[] bytes;
+        try
+        {
+            bytes = Convert.FromBase64String(base64);
+        }
+        catch
+        {
+            return JsonSerializer.Serialize(new { error = "Base64 inválido." });
+        }
+
+        try
+        {
+            var arquivo = new Arquivo { TipoArquivoId = tipoArquivoId, Bytes = bytes };
+            await repo.CreateAsync(arquivo);
+            return JsonSerializer.Serialize(new
+            {
+                id = arquivo.Id,
+                tipoArquivoId = arquivo.TipoArquivoId,
+                message = "Arquivo criado com sucesso."
+            });
+        }
+        catch (Exception ex)
+        {
+            return JsonSerializer.Serialize(new { error = ex.Message });
+        }
+    }
+
     [McpServerTool(Name = "download_arquivo"), Description("Baixa os bytes de um arquivo pelo id, retornando base64 e content type.")]
     public async Task<string> DownloadArquivo(
         [Description("Id do arquivo")] long id)
